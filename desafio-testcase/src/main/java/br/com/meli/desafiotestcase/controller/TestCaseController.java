@@ -3,6 +3,7 @@ package br.com.meli.desafiotestcase.controller;
 import br.com.meli.desafiotestcase.model.TestCase;
 import br.com.meli.desafiotestcase.service.TesteCaseService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,28 +18,29 @@ public class TestCaseController {
     private TesteCaseService testeCaseService;
 
     @PostMapping("/new")
-    public TestCase save(@RequestBody TestCase testCase) {
-        return testeCaseService.save(testCase);
+    public ResponseEntity<TestCase> save(@RequestBody TestCase testCase) {
+        return ResponseEntity.status(HttpStatus.CREATED).body(testeCaseService.save(testCase));
     }
 
     @GetMapping
-    public List<TestCase> findAll() {
-        return testeCaseService.findAll();
+    public ResponseEntity<List<TestCase>> findAll() {
+        return ResponseEntity.ok(testeCaseService.findAll());
     }
 
     @GetMapping("/{id}")
-    public TestCase findById(@PathVariable Long id) {
-        return testeCaseService.findById(id);
+    public ResponseEntity<TestCase> findById(@PathVariable Long id) {
+        return ResponseEntity.ok(testeCaseService.findById(id));
     }
 
     @DeleteMapping("/delete/{id}")
-    public void deleteById(@PathVariable Long id) {
+    public ResponseEntity<Void> deleteById(@PathVariable Long id) {
         testeCaseService.deleteBydId(id);
+        return ResponseEntity.noContent().build();
     }
 
     @GetMapping("/date/{date}")
-    public List<TestCase> findTestCaseByLastUpdateAfter(@PathVariable String date) {
-        return testeCaseService.findTestCaseByLastUpdateAfter(LocalDate.parse(date));
+    public ResponseEntity<List<TestCase>> findTestCaseByLastUpdateAfter(@PathVariable String date) {
+        return ResponseEntity.ok(testeCaseService.findTestCaseByLastUpdateAfter(LocalDate.parse(date)));
     }
 
     @PutMapping("/update")
