@@ -1,0 +1,50 @@
+[
+  {
+    "numeroOrdinal": 1,
+    "numeroRomano": "I"
+  },
+  {
+    "numeroOrdinal": 2,
+    "numeroRomano": "II"
+  },
+  {
+    "numeroOrdinal": 3,
+    "numeroRomano": "III"
+  },
+  {
+    "numeroOrdinal": 4,
+    "numeroRomano": "IV"
+  },
+  {
+    "numeroOrdinal": 5,
+    "numeroRomano": "V"
+  },
+  {
+    "numeroOrdinal": 7,
+    "numeroRomano": "VII"
+  },
+  {
+    "numeroOrdinal": 10,
+    "numeroRomano": "X"
+  },
+  {
+    "numeroOrdinal": 13,
+    "numeroRomano": "XIII"
+  },
+  {
+    "numeroOrdinal": 50,
+    "numeroRomano": "L"
+  },
+  {
+    "numeroOrdinal": 100,
+    "numeroRomano": "C"
+  },
+  {
+    "numeroOrdinal": 500,
+    "numeroRomano": "D"
+  },
+  {
+    "numeroOrdinal": 1000,
+    "numeroRomano": "M"
+  }
+]

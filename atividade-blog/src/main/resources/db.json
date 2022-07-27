@@ -1,0 +1,16 @@
+[ {
+  "id" : 1,
+  "titulo" : "um",
+  "autor" : "Pedro da Silva",
+  "dataPublicacao" : null
+}, {
+  "id" : 2,
+  "titulo" : "dois",
+  "autor" : "Maria Rosa",
+  "dataPublicacao" : null
+}, {
+  "id" : 3,
+  "titulo" : "tres",
+  "autor" : "Outra Pessoa",
+  "dataPublicacao" : "2022-07-05T21:46:55.130+00:00"
+} ]
