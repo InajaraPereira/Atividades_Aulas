@@ -1,12 +1,13 @@
 package br.com.dh.meli.desafiotutorial.service;
 
+import br.com.dh.meli.desafiotutorial.dto.TutorialDto;
 import br.com.dh.meli.desafiotutorial.model.Tutorial;
 
 import java.util.List;
 
 public interface TutorialService {
 
-    Tutorial save(Tutorial tutorial);
+    Tutorial save(TutorialDto tutorial);
 
     List<Tutorial> findAll();
 
@@ -20,6 +21,6 @@ public interface TutorialService {
 
     List<Tutorial> findTutorialByTitleContaining(String title);
 
-    Tutorial updateById(Long id, Tutorial tutorial);
+    Tutorial updateById(Long id, TutorialDto tutorial);
 
 }

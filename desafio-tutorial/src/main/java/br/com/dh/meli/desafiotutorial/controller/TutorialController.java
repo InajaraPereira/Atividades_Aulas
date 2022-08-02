@@ -1,7 +1,8 @@
 package br.com.dh.meli.desafiotutorial.controller;
 
+import br.com.dh.meli.desafiotutorial.dto.TutorialDto;
 import br.com.dh.meli.desafiotutorial.model.Tutorial;
-import br.com.dh.meli.desafiotutorial.service.TutorialService;
+import br.com.dh.meli.desafiotutorial.service.TutorialServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,10 +15,10 @@ import java.util.List;
 public class TutorialController {
 
     @Autowired
-    private TutorialService tutorialService;
+    private TutorialServiceImp tutorialService;
 
     @PostMapping
-    public ResponseEntity<Tutorial> save(@RequestBody Tutorial tutorial) {
+    public ResponseEntity<Tutorial> save(@RequestBody TutorialDto tutorial) {
         return ResponseEntity.status(HttpStatus.CREATED).body(tutorialService.save(tutorial));
     }
 
@@ -54,7 +55,7 @@ public class TutorialController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Tutorial> updateById(@PathVariable Long id, @RequestBody Tutorial tutorial) {
+    public ResponseEntity<Tutorial> updateById(@PathVariable Long id, @RequestBody TutorialDto tutorial) {
         return ResponseEntity.ok(tutorialService.updateById(id, tutorial));
     }
 

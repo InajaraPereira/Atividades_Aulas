@@ -1,5 +1,6 @@
 package br.com.dh.meli.desafiotutorial.service;
 
+import br.com.dh.meli.desafiotutorial.dto.TutorialDto;
 import br.com.dh.meli.desafiotutorial.model.Tutorial;
 import br.com.dh.meli.desafiotutorial.repository.TutorialRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,8 +15,12 @@ public class TutorialServiceImp implements TutorialService {
     private TutorialRepository tutorialRepository;
 
     @Override
-    public Tutorial save(Tutorial tutorial) {
-        return tutorialRepository.save(tutorial);
+    public Tutorial save(TutorialDto tutorial) {
+        Tutorial newTutorial = new Tutorial();
+        newTutorial.setTitle(tutorial.getTitle());
+        newTutorial.setDescription(tutorial.getDescription());
+        newTutorial.setPublicationStatus(tutorial.getPublicationStatus());
+        return tutorialRepository.save(newTutorial);
     }
 
     @Override
@@ -50,7 +55,7 @@ public class TutorialServiceImp implements TutorialService {
     }
 
     @Override
-    public Tutorial updateById(Long id, Tutorial tutorial) {
+    public Tutorial updateById(Long id, TutorialDto tutorial) {
         Tutorial tutorialFound = findById(id);
         tutorialFound.setTitle(tutorial.getTitle());
         tutorialFound.setDescription(tutorial.getDescription());
